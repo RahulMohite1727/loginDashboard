@@ -1,0 +1,17 @@
+<app-navbar (openSidebar)="drawer.toggle()"></app-navbar>
+<mat-drawer-container class="example-container" autosize style="height: 100vh;top:65px">
+  <mat-drawer #drawer class="example-sidenav" mode="side" style=" z-index:2000">
+    <div class="">
+      <a routerLink="reg">Registration Form</a>
+    </div>
+    <br>
+    <div class="">
+      <a routerLink="table">Table</a>
+    </div>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <div class="container-fluid" [style.margin-top.px]="80">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>

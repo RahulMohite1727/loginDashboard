@@ -1,0 +1,35 @@
+<div class="table-responsive">
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Sr.No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableDate | async; let i =index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{row.name}}</td>
+        <td>{{row.city}}</td>
+        <td>{{row.phone}}</td>
+        <td>{{row.email}}</td>
+        <td>
+          <button id="edit" (click)="edit(i)">
+            <span class="material-icons" style="color: green;">
+              edit
+            </span>
+          </button>
+          <button id="clear" (click)="delete(i)">
+            <span class="material-icons" style="color: red;">
+              clear
+            </span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

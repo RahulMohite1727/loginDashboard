@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-2 col-8" *ngIf="regForm">
+      <form class="d-flex justify-content-center flex-column" [formGroup]="regForm">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" placeholder="Name" formControlName="name">
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" class="form-control" placeholder="City" formControlName="city">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" class="form-control" placeholder="Phone" formControlName="phone">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="Email" formControlName="email">
+        </div>
+        <div>
+          <div *ngIf="!isEdit">
+            <button type="button" class="btn btn-primary mx-auto" width="100px" (click)="submit()">Submit</button>
+          </div>
+          <div *ngIf="isEdit">
+            <button type="button" class="btn btn-primary mx-auto" width="100px" (click)="submit()">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
